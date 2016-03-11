@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Node
+node_modules/
+dist/
+
+# Spark
+spark-warehouse/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
