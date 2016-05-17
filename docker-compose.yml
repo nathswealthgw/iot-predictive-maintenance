@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  api:
+    build: ./backend
+    environment:
+      TF_SERVING_URL: http://tf-serving:8501
+    ports:
+      - "8000:8000"
+    depends_on:
+      - tf-serving
+
+  tf-serving:
+    image: tensorflow/serving:2.15.0
+    volumes:
+      - ./pipeline/serving:/models
+    command:
+      - "--model_config_file=/models/model_config.pbtxt"
+    ports:
+      - "8501:8501"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
