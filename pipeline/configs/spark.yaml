@@ -1,0 +1,9 @@
+spark:
+  appName: iot-predictive-maintenance
+  executorMemory: 8g
+  executorCores: 4
+  shufflePartitions: 400
+  dynamicAllocation:
+    enabled: true
+    minExecutors: 4
+    maxExecutors: 40
