@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IoT Predictive Maintenance</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Scalable Predictive Maintenance System</p>
+          <h1>Real-time failure intelligence for 120K IoT devices</h1>
+          <p class="subtitle">
+            Distributed PySpark pipelines, TensorFlow Serving inference, and
+            operator-ready dashboards that prevent unplanned downtime before it
+            happens.
+          </p>
+          <div class="cta-row">
+            <button class="primary">View Live Fleet</button>
+            <button class="secondary">Export Risk Report</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Fleet health</h2>
+          <p class="hero-card__value">98.7%</p>
+          <p class="hero-card__label">Devices operating within safe range</p>
+          <div class="hero-card__trend">+1.8% vs last week</div>
+        </div>
+      </header>
+
+      <section class="metrics" id="metrics"></section>
+
+      <section class="live-demo">
+        <div class="panel live-card">
+          <div class="live-card__header">
+            <div>
+              <p class="eyebrow">Live demo</p>
+              <h3>Streaming fleet telemetry</h3>
+            </div>
+            <div class="status-pill">
+              <span class="status-dot"></span>
+              Live
+            </div>
+          </div>
+          <div class="live-stats">
+            <div>
+              <p class="live-label">Fleet uptime</p>
+              <p class="live-value" id="uptime-value">99.92%</p>
+            </div>
+            <div>
+              <p class="live-label">Events / sec</p>
+              <p class="live-value" id="throughput-value">41,820</p>
+            </div>
+            <div>
+              <p class="live-label">Risk score</p>
+              <p class="live-value live-value--accent" id="risk-value">0.32</p>
+            </div>
+          </div>
+          <div class="wave-grid" id="wave-grid"></div>
+        </div>
+
+        <div class="panel live-card live-card--dark">
+          <div class="live-card__header">
+            <div>
+              <p class="eyebrow">Anomaly radar</p>
+              <h3>Adaptive sensing map</h3>
+            </div>
+            <button class="secondary">Simulate surge</button>
+          </div>
+          <div class="radar">
+            <div class="radar__ring"></div>
+            <div class="radar__ring"></div>
+            <div class="radar__ring"></div>
+            <div class="radar__sweep"></div>
+            <div class="radar__blip radar__blip--one"></div>
+            <div class="radar__blip radar__blip--two"></div>
+            <div class="radar__blip radar__blip--three"></div>
+          </div>
+          <ul class="pulse-log" id="pulse-log"></ul>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel">
+          <h3>Top risk alerts</h3>
+          <ul class="alert-list" id="alerts"></ul>
+        </div>
+        <div class="panel panel--dark">
+          <h3>Streaming pipeline status</h3>
+          <div class="pipeline">
+            <div>
+              <p>Kafka ingestion</p>
+              <strong>Stable · 42K msg/sec</strong>
+            </div>
+            <div>
+              <p>Spark feature store</p>
+              <strong>Healthy · 99.98% uptime</strong>
+            </div>
+            <div>
+              <p>TF Serving</p>
+              <strong>Blue/Green · v2.3.4</strong>
+            </div>
+            <div>
+              <p>Risk API</p>
+              <strong>p95 latency 118 ms</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="dashboard-footer">
+        <p>
+          This live demo uses simulated telemetry data to represent realistic
+          ingestion rates and anomalies.
+          <span class="tooltip-container" tabindex="0">
+            <span class="info-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="12" cy="7" r="1.5" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="tooltip-text">
+              Live production data is not exposed publicly. Simulation mirrors
+              real-world variance, throughput, and alert behaviour.
+            </span>
+          </span>
+        </p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
