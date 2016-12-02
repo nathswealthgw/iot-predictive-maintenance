@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iot-predictive-maintenance-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: iot-predictive-maintenance-api
+  template:
+    metadata:
+      labels:
+        app: iot-predictive-maintenance-api
+    spec:
+      containers:
+        - name: api
+          image: iot-predictive-maintenance-api:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: TF_SERVING_URL
+              value: "http://tf-serving:8501"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iot-predictive-maintenance-api
+spec:
+  selector:
+    app: iot-predictive-maintenance-api
+  ports:
+    - port: 80
+      targetPort: 8000
